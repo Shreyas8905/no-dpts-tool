@@ -1,0 +1,23 @@
+# Build artifacts
+/target/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+build_errors.txt
+
+# Testing artifacts
+.git/NO_DPTS_SKIP

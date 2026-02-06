@@ -1,0 +1,46 @@
+[package]
+name = "no-dpts-tool"
+version = "0.1.0"
+edition = "2021"
+description = "A high-performance Git-integrated CLI gatekeeper for code quality and security"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/yourusername/no-dpts-tool"
+keywords = ["git", "security", "linting", "pre-commit", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+# CLI parsing
+clap = { version = "4", features = ["derive"] }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# HTTP client for AI API
+reqwest = { version = "0.11", features = ["json"] }
+
+# Terminal styling
+colored = "2"
+indicatif = "0.17"
+
+# Pattern matching for secrets
+regex = "1"
+
+# Configuration
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+dotenv = "0.15"
+
+# Error handling
+anyhow = "1"
+thiserror = "1"
+
+# Rate limiting
+governor = "0.6"
+
+# Async process execution
+async-process = "2"
+
+[[bin]]
+name = "no-dpts-tool"
+path = "src/main.rs"
