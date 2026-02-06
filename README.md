@@ -1,4 +1,4 @@
-# 🛡️ no-dpts-tool
+# no-dpts-tool
 
 <div align="center">
 
@@ -12,7 +12,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [About](#-about)
 - [The Problem](#-the-problem)
@@ -39,7 +39,7 @@ The name stands for **"No Dangerous Push To Source"** — a reminder that every 
 
 ---
 
-## 🔥 The Problem
+## The Problem
 
 Modern software development faces several challenges:
 
@@ -71,17 +71,17 @@ Modern software development faces several challenges:
 
 | Problem | Solution |
 |---------|----------|
-| Secrets in code | 🔐 20+ regex patterns detect API keys, tokens, passwords |
-| Missing linting | 📏 Auto-runs language-appropriate linters (ruff, eslint, cargo fmt) |
-| Slow reviews | 🤖 AI-powered instant code review via Groq/LLM |
-| Bypass temptation | 🚫 Physical blocking via exit code 1 |
-| Emergency needs | ⚡ One-time bypass token for true emergencies |
+| Secrets in code | 20+ regex patterns detect API keys, tokens, passwords |
+| Missing linting | Auto-runs language-appropriate linters (ruff, eslint, cargo fmt) |
+| Slow reviews | AI-powered instant code review via Groq/LLM |
+| Bypass temptation | Physical blocking via exit code 1 |
+| Emergency needs | One-time bypass token for true emergencies |
 
 ---
 
-## ✨ Features
+## Features
 
-### 🔐 Security Scanner
+### Security Scanner
 - Detects 20+ types of secrets and sensitive data:
   - AWS Access Keys & Secret Keys
   - Google API Keys & OAuth Credentials
@@ -98,7 +98,7 @@ Modern software development faces several challenges:
 - Support for custom regex patterns
 - Severity levels (High/Medium/Low)
 
-### 📏 Language-Aware Linting
+### Language-Aware Linting
 - Automatic linter detection based on file extension:
   - Python → `ruff check`
   - JavaScript/TypeScript → `eslint`
@@ -106,7 +106,7 @@ Modern software development faces several challenges:
 - Graceful fallback if linter not installed
 - Parallel execution for speed
 
-### 🤖 AI-Powered Code Review
+### AI-Powered Code Review
 - Integrates with Groq API for instant AI reviews
 - Uses advanced LLMs (default: llama-3.3-70b-versatile)
 - Analyzes for:
@@ -118,13 +118,13 @@ Modern software development faces several challenges:
 - Clear PASS/REJECT verdict
 - Built-in rate limiting
 
-### ⚡ Performance
+### Performance
 - Parallel execution of all checks via `tokio`
 - Only scans staged files (not entire repo)
 - Efficient regex compilation
 - Minimal commit-time overhead
 
-### 🎨 Developer Experience
+### Developer Experience
 - Beautiful terminal output with colors and spinners
 - Clear, actionable error messages
 - Progress indicators for long operations
@@ -132,7 +132,7 @@ Modern software development faces several challenges:
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### From Source (Recommended)
 
@@ -160,7 +160,7 @@ cp target/release/no-dpts-tool /usr/local/bin/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # 1. Navigate to your Git repository
@@ -180,7 +180,7 @@ git commit -m "Your commit message"
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Create a `no-dpts.toml` file in your project root:
 
@@ -222,11 +222,11 @@ Create a `.env` file in your project root:
 GROQ_API_KEY=gsk_your_api_key_here
 ```
 
-> ⚠️ **Important**: Add `.env` to your `.gitignore`!
+>  **Important**: Add `.env` to your `.gitignore`!
 
 ---
 
-## 📖 Commands
+##  Commands
 
 ### `no-dpts-tool init`
 
@@ -251,9 +251,9 @@ no-dpts-tool check
 ```
 
 **Checks performed:**
-1. 🔐 Security scan for secrets/sensitive data
-2. 📏 Language-aware linting
-3. 🤖 AI-powered code review
+1.  Security scan for secrets/sensitive data
+2.  Language-aware linting
+3.  AI-powered code review
 
 **Exit codes:**
 - `0` - All checks passed
@@ -268,11 +268,11 @@ no-dpts-tool bypass
 git commit -m "Emergency fix"  # Checks will be skipped once
 ```
 
-> ⚠️ **Use sparingly!** The bypass is a one-time token and is intended for true emergencies only.
+>  **Use sparingly!** The bypass is a one-time token and is intended for true emergencies only.
 
 ---
 
-## 👤 For Users
+##  For Users
 
 ### Daily Workflow
 
@@ -289,7 +289,7 @@ git commit -m "Emergency fix"  # Checks will be skipped once
 
 #### Security Findings
 ```
-🔐 Security Findings:
+ Security Findings:
 ──────────────────────────────────────────────────────────
   HIGH [AWS Access Key ID] config.py:15 - AKIA...XYZ
   MEDIUM [Generic API Key] utils.js:42 - api_k...key"
@@ -303,7 +303,7 @@ git commit -m "Emergency fix"  # Checks will be skipped once
 
 #### Linting Failures
 ```
-🔍 Linting Failures:
+Linting Failures:
 ──────────────────────────────────────────────────────────
   ✗ main.py (ruff)
     main.py:10:5: E501 line too long (120 > 88 characters)
@@ -316,7 +316,7 @@ git commit -m "Emergency fix"  # Checks will be skipped once
 
 #### AI Review Rejection
 ```
-🤖 AI Review: REJECTED
+AI Review: REJECTED
 ──────────────────────────────────────────────────────────
   The code contains a potential SQL injection vulnerability
   on line 45. User input is directly concatenated into the
@@ -355,7 +355,7 @@ git commit -m "Hotfix: production down"
 
 ---
 
-## 🤝 For Contributors
+## For Contributors
 
 ### Project Structure
 
@@ -515,7 +515,7 @@ fn get_linter_config() -> HashMap<&'static str, (&'static str, Vec<&'static str>
 
 ---
 
-## 📐 Architecture
+## Architecture
 
 ### Module Responsibilities
 
@@ -547,17 +547,17 @@ fn get_linter_config() -> HashMap<&'static str, (&'static str, Vec<&'static str>
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- Built with ❤️ in Rust
+- Built with passion in Rust
 - AI reviews powered by [Groq](https://groq.com)
-- Inspired by the need for better code quality enforcement
+- Inspired by the need for better code quality enforcement. 
 
 ---
 
